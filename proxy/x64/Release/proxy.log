@@ -1,0 +1,390 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (Spare Proxy.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  events.cpp
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\proton\variant.hpp(322,61): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\proton\variant.hpp(339,61): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\proton\variant.hpp(355,30): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\struct.h(20,25): warning C4244: 'argument': conversion from 'float' to 'uint32_t', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\struct.h(26,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\struct.h(26,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\world.h(107,12): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\world.h(747,19): warning C4018: '>': signed/unsigned mismatch
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\world.h(750,24): warning C4244: 'argument': conversion from 'T2' to 'unsigned int', possible loss of data
+          with
+          [
+              T2=float
+          ]
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\gt.hpp(25,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\src\vcpkg\installed\x64-windows\include\fmt\format.h(1055,56): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'fmt::v10::format_error'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\stdexcept(101,19): message : see declaration of 'std::runtime_error'
+C:\src\vcpkg\installed\x64-windows\include\fmt\format.h(1055,15): message : see declaration of 'fmt::v10::format_error'
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\discord_webhook.h(19,42): warning C4267: 'initializing': conversion from 'size_t' to 'DWORD', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\discord_webhook.h(19,34): warning C4267: 'initializing': conversion from 'size_t' to 'const DWORD', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(46,27): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(47,27): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(129,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(130,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(291,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(291,92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(291,73): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(291,50): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(298,81): warning C4244: '=': conversion from 'float' to 'uint32_t', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(308,45): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(308,29): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(311,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(396,79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(396,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1083,159): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1083,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1083,77): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1083,54): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1123,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1124,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1302,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1303,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1308,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1309,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1314,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1315,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1411,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1611,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1612,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1662,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1663,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1860,68): warning C4305: 'argument': truncation from 'int' to 'bool'
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1162,13): warning C4101: 'itemid': unreferenced local variable
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1511,42): warning C4101: 'e': unreferenced local variable
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1584,50): warning C4101: 'e': unreferenced local variable
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1635,50): warning C4101: 'e': unreferenced local variable
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1686,50): warning C4101: 'e': unreferenced local variable
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(1799,50): warning C4101: 'e': unreferenced local variable
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(2193,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\events.cpp(2194,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+events.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float hair" (?hair@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float shirt" (?shirt@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float pants" (?pants@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float shoe" (?shoe@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float face" (?face@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float hand" (?hand@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float back" (?back@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float mask" (?mask@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float neck" (?neck@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "float ances" (?ances@@3MA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool iswear" (?iswear@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool doublejump" (?doublejump@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int punch_effect" (?punch_effect@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool noclip" (?noclip@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool wrench" (?wrench@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool auto_farm" (?auto_farm@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool auto_stop_farm" (?auto_stop_farm@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool spam_detect" (?spam_detect@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int x_pos1" (?x_pos1@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int x_pos2" (?x_pos2@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int x_pos3" (?x_pos3@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int x_pos4" (?x_pos4@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int x_posback" (?x_posback@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int y_pos1" (?y_pos1@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int y_pos2" (?y_pos2@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int y_pos3" (?y_pos3@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int y_pos4" (?y_pos4@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int y_posback" (?y_posback@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool fastdrop" (?fastdrop@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool fasttrash" (?fasttrash@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool superpunch" (?superpunch@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool autocollect" (?autocollect@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool spin_checker" (?spin_checker@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool autobgl" (?autobgl@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool spam" (?spam@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool savetitle" (?savetitle@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool saveset" (?saveset@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int farm_id" (?farm_id@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool punch_roulette" (?punch_roulette@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool hidden_r" (?hidden_r@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool owner_detect" (?owner_detect@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "char * owner_name" (?owner_name@@3PADA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool reme_mode" (?reme_mode@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool legit" (?legit@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool succeed" (?succeed@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int setnumber" (?setnumber@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int lampx" (?lampx@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int lampy" (?lampy@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int discx" (?discx@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int discy" (?discy@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int delay" (?delay@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int lampxq" (?lampxq@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int lampyq" (?lampyq@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int delayq" (?delayq@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int setnumberq" (?setnumberq@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int bjtilex" (?bjtilex@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int bjtiley" (?bjtiley@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool qeme_mode" (?qeme_mode@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool succeedq" (?succeedq@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool dancemove" (?dancemove@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int gems" (?gems@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool gems_accumulating" (?gems_accumulating@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int gems_accumulated_count" (?gems_accumulated_count@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool bj" (?bj@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool pathmarkerexploit" (?pathmarkerexploit@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool pathmarkerexploitlocalworld" (?pathmarkerexploitlocalworld@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool anticollect" (?anticollect@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool show_ping" (?show_ping@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool GetNetid" (?GetNetid@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int GetNetids" (?GetNetids@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool GetUid" (?GetUid@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int GetUids" (?GetUids@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool extractexploit" (?extractexploit@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool extractready" (?extractready@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int target_id" (?target_id@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool duct_tape" (?duct_tape@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool is_visual" (?is_visual@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool ssup" (?ssup@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool speed" (?speed@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool bruteforcepassdoor" (?bruteforcepassdoor@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool placetp" (?placetp@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int placex" (?placex@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int placey" (?placey@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool devmode" (?devmode@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool textcolorenable" (?textcolorenable@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int authfail" (?authfail@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "int role_id" (?role_id@@3HA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool block_wrench" (?block_wrench@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::map<int,struct ItemData,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct ItemData> > > itemDefs" (?itemDefs@@3V?$map@HUItemData@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUItemData@@@std@@@3@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > mode" (?mode@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > bc" (?bc@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > title" (?title@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > spam_text" (?spam_text@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > spam_delay" (?spam_delay@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::vector<int,class std::allocator<int> > owner_netid" (?owner_netid@@3V?$vector@HV?$allocator@H@std@@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > pathmarkertxt" (?pathmarkertxt@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > country_v" (?country_v@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > last_world" (?last_world@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > prev_world" (?prev_world@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > textcolor" (?textcolor@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > wrench_dialog" (?wrench_dialog@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+events.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > wrench_block" (?wrench_block@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+gt.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+gt.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+gt.obj : warning LNK4006: "class std::map<int,struct ItemData,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct ItemData> > > itemDefs" (?itemDefs@@3V?$map@HUItemData@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUItemData@@@std@@@3@@std@@A) already defined in Discord.obj; second definition ignored
+http.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+http.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float hair" (?hair@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float shirt" (?shirt@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float pants" (?pants@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float shoe" (?shoe@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float face" (?face@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float hand" (?hand@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float back" (?back@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float mask" (?mask@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float neck" (?neck@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "float ances" (?ances@@3MA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool iswear" (?iswear@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool doublejump" (?doublejump@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int punch_effect" (?punch_effect@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool noclip" (?noclip@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool wrench" (?wrench@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool auto_farm" (?auto_farm@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool auto_stop_farm" (?auto_stop_farm@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool spam_detect" (?spam_detect@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int x_pos1" (?x_pos1@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int x_pos2" (?x_pos2@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int x_pos3" (?x_pos3@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int x_pos4" (?x_pos4@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int x_posback" (?x_posback@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int y_pos1" (?y_pos1@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int y_pos2" (?y_pos2@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int y_pos3" (?y_pos3@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int y_pos4" (?y_pos4@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int y_posback" (?y_posback@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool fastdrop" (?fastdrop@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool fasttrash" (?fasttrash@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool superpunch" (?superpunch@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool autocollect" (?autocollect@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool spin_checker" (?spin_checker@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool autobgl" (?autobgl@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool spam" (?spam@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool savetitle" (?savetitle@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool saveset" (?saveset@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int farm_id" (?farm_id@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool punch_roulette" (?punch_roulette@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool hidden_r" (?hidden_r@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool owner_detect" (?owner_detect@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "char * owner_name" (?owner_name@@3PADA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool reme_mode" (?reme_mode@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool legit" (?legit@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool succeed" (?succeed@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int setnumber" (?setnumber@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int lampx" (?lampx@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int lampy" (?lampy@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int discx" (?discx@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int discy" (?discy@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int delay" (?delay@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int lampxq" (?lampxq@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int lampyq" (?lampyq@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int delayq" (?delayq@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int setnumberq" (?setnumberq@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int bjtilex" (?bjtilex@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int bjtiley" (?bjtiley@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool qeme_mode" (?qeme_mode@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool succeedq" (?succeedq@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool dancemove" (?dancemove@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int gems" (?gems@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool gems_accumulating" (?gems_accumulating@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int gems_accumulated_count" (?gems_accumulated_count@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool bj" (?bj@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool pathmarkerexploit" (?pathmarkerexploit@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool pathmarkerexploitlocalworld" (?pathmarkerexploitlocalworld@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool anticollect" (?anticollect@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool show_ping" (?show_ping@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool GetNetid" (?GetNetid@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int GetNetids" (?GetNetids@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool GetUid" (?GetUid@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int GetUids" (?GetUids@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool extractexploit" (?extractexploit@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool extractready" (?extractready@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int target_id" (?target_id@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool duct_tape" (?duct_tape@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool is_visual" (?is_visual@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool ssup" (?ssup@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool speed" (?speed@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool bruteforcepassdoor" (?bruteforcepassdoor@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool placetp" (?placetp@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int placex" (?placex@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int placey" (?placey@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool devmode" (?devmode@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool textcolorenable" (?textcolorenable@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int authfail" (?authfail@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "int role_id" (?role_id@@3HA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "bool block_wrench" (?block_wrench@@3_NA) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::map<int,struct ItemData,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct ItemData> > > itemDefs" (?itemDefs@@3V?$map@HUItemData@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUItemData@@@std@@@3@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > mode" (?mode@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > bc" (?bc@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > title" (?title@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > spam_text" (?spam_text@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > spam_delay" (?spam_delay@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::vector<int,class std::allocator<int> > owner_netid" (?owner_netid@@3V?$vector@HV?$allocator@H@std@@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > pathmarkertxt" (?pathmarkertxt@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > country_v" (?country_v@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > last_world" (?last_world@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > prev_world" (?prev_world@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > textcolor" (?textcolor@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > wrench_dialog" (?wrench_dialog@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+proxy.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > wrench_block" (?wrench_block@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float hair" (?hair@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float shirt" (?shirt@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float pants" (?pants@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float shoe" (?shoe@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float face" (?face@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float hand" (?hand@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float back" (?back@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float mask" (?mask@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float neck" (?neck@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "float ances" (?ances@@3MA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool iswear" (?iswear@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool doublejump" (?doublejump@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int punch_effect" (?punch_effect@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool noclip" (?noclip@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool wrench" (?wrench@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool auto_farm" (?auto_farm@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool auto_stop_farm" (?auto_stop_farm@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool spam_detect" (?spam_detect@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int x_pos1" (?x_pos1@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int x_pos2" (?x_pos2@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int x_pos3" (?x_pos3@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int x_pos4" (?x_pos4@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int x_posback" (?x_posback@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int y_pos1" (?y_pos1@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int y_pos2" (?y_pos2@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int y_pos3" (?y_pos3@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int y_pos4" (?y_pos4@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int y_posback" (?y_posback@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool fastdrop" (?fastdrop@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool fasttrash" (?fasttrash@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool superpunch" (?superpunch@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool autocollect" (?autocollect@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool spin_checker" (?spin_checker@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool autobgl" (?autobgl@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool spam" (?spam@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool savetitle" (?savetitle@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool saveset" (?saveset@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int farm_id" (?farm_id@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool punch_roulette" (?punch_roulette@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool hidden_r" (?hidden_r@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool owner_detect" (?owner_detect@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "char * owner_name" (?owner_name@@3PADA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool reme_mode" (?reme_mode@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool legit" (?legit@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool succeed" (?succeed@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int setnumber" (?setnumber@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int lampx" (?lampx@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int lampy" (?lampy@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int discx" (?discx@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int discy" (?discy@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int delay" (?delay@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int lampxq" (?lampxq@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int lampyq" (?lampyq@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int delayq" (?delayq@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int setnumberq" (?setnumberq@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int bjtilex" (?bjtilex@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int bjtiley" (?bjtiley@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool qeme_mode" (?qeme_mode@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool succeedq" (?succeedq@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool dancemove" (?dancemove@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int gems" (?gems@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool gems_accumulating" (?gems_accumulating@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int gems_accumulated_count" (?gems_accumulated_count@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool bj" (?bj@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool pathmarkerexploit" (?pathmarkerexploit@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool pathmarkerexploitlocalworld" (?pathmarkerexploitlocalworld@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool anticollect" (?anticollect@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool show_ping" (?show_ping@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool GetNetid" (?GetNetid@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int GetNetids" (?GetNetids@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool GetUid" (?GetUid@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int GetUids" (?GetUids@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool extractexploit" (?extractexploit@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool extractready" (?extractready@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int target_id" (?target_id@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool duct_tape" (?duct_tape@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool is_visual" (?is_visual@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool ssup" (?ssup@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool speed" (?speed@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool bruteforcepassdoor" (?bruteforcepassdoor@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool placetp" (?placetp@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int placex" (?placex@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int placey" (?placey@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool devmode" (?devmode@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool textcolorenable" (?textcolorenable@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int authfail" (?authfail@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "int role_id" (?role_id@@3HA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "bool block_wrench" (?block_wrench@@3_NA) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::map<int,struct ItemData,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct ItemData> > > itemDefs" (?itemDefs@@3V?$map@HUItemData@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUItemData@@@std@@@3@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > mode" (?mode@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > bc" (?bc@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > title" (?title@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > spam_text" (?spam_text@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > spam_delay" (?spam_delay@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::vector<int,class std::allocator<int> > owner_netid" (?owner_netid@@3V?$vector@HV?$allocator@H@std@@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > pathmarkertxt" (?pathmarkertxt@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > country_v" (?country_v@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > last_world" (?last_world@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > prev_world" (?prev_world@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > textcolor" (?textcolor@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > wrench_dialog" (?wrench_dialog@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+server.obj : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > wrench_block" (?wrench_block@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) already defined in Discord.obj; second definition ignored
+utils.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+utils.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+utils.obj : warning LNK4006: "class std::map<int,struct ItemData,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct ItemData> > > itemDefs" (?itemDefs@@3V?$map@HUItemData@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUItemData@@@std@@@3@@std@@A) already defined in Discord.obj; second definition ignored
+world.obj : warning LNK4006: "bool __cdecl utils::runAtInterval(class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > &,double)" (?runAtInterval@utils@@YA_NAEAV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@N@Z) already defined in Discord.obj; second definition ignored
+world.obj : warning LNK4006: "bool utils::eh" (?eh@utils@@3_NA) already defined in Discord.obj; second definition ignored
+world.obj : warning LNK4006: "class std::map<int,struct ItemData,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct ItemData> > > itemDefs" (?itemDefs@@3V?$map@HUItemData@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUItemData@@@std@@@3@@std@@A) already defined in Discord.obj; second definition ignored
+library_x64.lib(auth.obj) : warning LNK4099: PDB '' was not found with 'library_x64.lib(auth.obj)' or at ''; linking object as if no debug info
+library_x64.lib(utils.obj) : warning LNK4099: PDB '' was not found with 'library_x64.lib(utils.obj)' or at ''; linking object as if no debug info
+library_x64.lib(hmac_sha256.obj) : warning LNK4099: PDB '' was not found with 'library_x64.lib(hmac_sha256.obj)' or at ''; linking object as if no debug info
+library_x64.lib(sha256.obj) : warning LNK4099: PDB '' was not found with 'library_x64.lib(sha256.obj)' or at ''; linking object as if no debug info
+F:\ZyyyL Files\Secret Files\zyl-proxy\x64\Release\Proxy.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+  proxy.vcxproj -> F:\ZyyyL Files\Secret Files\zyl-proxy\x64\Release\Proxy.exe

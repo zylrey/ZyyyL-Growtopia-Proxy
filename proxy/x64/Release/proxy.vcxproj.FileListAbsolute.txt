@@ -1,0 +1,2 @@
+C:\Users\PC\Desktop\rbsh-proxy\proxy\x64\Release\proxy.vcxproj.CopyComplete
+F:\ZyyyL Files\Secret Files\zyl-proxy\proxy\x64\Release\proxy.vcxproj.CopyComplete

@@ -1,0 +1,25 @@
+1683953971414 CP:0_PL:0_OID:_player_chat=spun the wheel and got `0[`4FAKE`0]`w
+1683954523957 CP:0_PL:0_OID:_player_chat=spun the wheel and got `0[`4FAKE`0]`w
+1683954857288 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `49``!`7]``
+1683954857513 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b31``!`7]``
+1683954857722 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b22``!`7]``
+1683954858077 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b11``!`7]``
+1683954858743 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `47``!`7]``
+1683954867077 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `436``!`7]``
+1683954867488 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b20``!`7]``
+1683954873342 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b31``!`7]``
+1683954873545 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `436``!`7]``
+1683954873972 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `45``!`7]``
+1683954878910 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b4``!`7]``
+1683954879527 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `421``!`7]``
+1683954891896 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b29``!`7]``
+1683954892112 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b35``!`7]``
+1683954892306 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `436``!`7]``
+1683954892515 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `49``!`7]``
+1683954892719 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b10``!`7]``
+1683954892928 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b11``!`7]``
+1683954893335 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b10``!`7]``
+1683954893590 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `b2``!`7]``
+1683954894209 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `43``!`7]``
+1683954895604 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `436``!`7]``
+1683954939983 REAL: `0[`2REAL`0]`w `7[```wxRaNoob`` spun the wheel and got `432``!`7]``
