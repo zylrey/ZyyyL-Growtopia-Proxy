@@ -23,6 +23,7 @@ namespace events {
         bool generictext(std::string packet);
         bool gamemessage(std::string packet);
         bool state(gameupdatepacket_t* packet);
+        bool tile_change_request(gameupdatepacket_t* packet);
         int get_punch_id(const int id_);
 
     }; // namespace out
@@ -99,6 +100,10 @@ bool bj = false;
 bool pathmarkerexploit = false;
 bool pathmarkerexploitlocalworld;
 std::string pathmarkertxt = "hiLol";
+
+int pathfinder_blocks_per_teleport = 8;
+int pathfinder_delay_ms = 2;
+bool pathfinder_effect_enabled = false;
 
 bool anticollect = false;
 std::string country_v;

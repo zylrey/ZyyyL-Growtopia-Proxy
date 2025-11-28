@@ -5,6 +5,7 @@
 #include "proton/hash.hpp"
 #include "proton/rtparam.hpp"
 #include "utils.h"
+#include <algorithm>
 #include <chrono>
 #include "print.h"
 #include "PathFinder.h"
@@ -290,6 +291,12 @@ void server::handle_outgoing() {
                 switch (packet->m_type) {
                 case PACKET_STATE:
                     if (events::out::state(packet)) {
+                        enet_packet_destroy(evt.packet);
+                        return;
+                    }
+                    break;
+                case PACKET_TILE_CHANGE_REQUEST:
+                    if (events::out::tile_change_request(packet)) {
                         enet_packet_destroy(evt.packet);
                         return;
                     }
@@ -895,36 +902,35 @@ void server::Set_Pos(int x, int y)
 
 void server::pathFindTo(int x, int y) {
     try {
-        auto world = g_server->m_world;
+        const auto& world = g_server->m_world;
 
-        PathFinder pf(100, 60);
+        PathFinder pf(world.width, world.height);
 
-        for (int xx = 0; xx < 100; xx++) {
-            for (int yy = 0; yy < 60; yy++) {
-                int inta = 0;
-                auto tile = world.tiles.find(HashCoord(xx, yy));
-
-                int collisionType = world.itemDataContainer.item_map.find(tile->second.header.foreground)->second.collisionType;
-                if (collisionType == 0) {
-                    inta = 0;
+        for (int xx = 0; xx < world.width; xx++) {
+            for (int yy = 0; yy < world.height; yy++) {
+                const auto tile = world.tiles.find(HashCoord(xx, yy));
+                if (tile == world.tiles.end()) {
+                    continue;
                 }
-                else if (collisionType == 1) {
-                    inta = 1;
+
+                const auto item = world.itemDataContainer.item_map.find(tile->second.header.foreground);
+                const int collisionType = item != world.itemDataContainer.item_map.end() ? item->second.collisionType : 0;
+                bool blocked = false;
+
+                if (collisionType == 1) {
+                    blocked = true;
                 }
                 else if (collisionType == 2) {
-                    inta = (yy < yy ? 1 : 0);
+                    blocked = false;
                 }
                 else if (collisionType == 3) {
-                    inta = !world.hasAccessName() ? (tile->second.header.flags_1 == 0x90 ? 0 : 1) : 0;
+                    blocked = !world.hasAccessName() ? (tile->second.header.flags_1 != 0x90) : false;
                 }
-                /*else if (collisionType == 4) {
-                    inta = tile->second.header.flags_1 == 64 ? 0 : 1;
-                }*/
                 else {
-                    inta = tile->second.header.foreground == 0 ? 0 : 1;
+                    blocked = tile->second.header.foreground != 0;
                 }
 
-                if (inta == 1) {
+                if (blocked) {
                     pf.setBlocked(xx, yy);
                 }
             }
@@ -933,39 +939,40 @@ void server::pathFindTo(int x, int y) {
         pf.setNeighbors({ -1, 0, 1, 0 }, { 0, 1, 0, -1 });
         vector<pair<int, int>> path = pf.aStar(g_server->Local_Player.pos.m_x / 32, g_server->Local_Player.pos.m_y / 32, x, y);
 
-        if (path.size() > 0) {
-            if (path.size() < 150)
-                for (auto& p : path) {
-                    gameupdatepacket_t packet{ 0 };
-                    packet.m_type = PACKET_STATE;
-                    packet.m_int_data = 6326;
-                    packet.m_vec_x = p.first * 32;
-                    packet.m_vec_y = p.second * 32;
-                    packet.m_state1 = p.first;
-                    packet.m_state2 = p.second;
-                    packet.m_packet_flags = UPDATE_PACKET_PLAYER_MOVING_RIGHT;
-                    g_server->send(false, NET_MESSAGE_GAME_PACKET, (uint8_t*)&packet, sizeof(gameupdatepacket_t));
+        if (!path.empty()) {
+            const int stride = std::max(1, pathfinder_blocks_per_teleport);
+            const int delay_ms = std::max(0, pathfinder_delay_ms);
 
-                    std::this_thread::sleep_for(std::chrono::milliseconds(2));
-                }
-            else {
-                for (std::size_t i = 0; i < path.size(); i += 2) {
-                    gameupdatepacket_t packet{ 0 };
-                    packet.m_type = PACKET_STATE;
-                    packet.m_int_data = 6326;
-                    packet.m_vec_x = path[i].first * 32;
-                    packet.m_vec_y = path[i].second * 32;
-                    packet.m_state1 = path[i].first;
-                    packet.m_state2 = path[i].second;
-                    packet.m_packet_flags = UPDATE_PACKET_PLAYER_MOVING_RIGHT;
-                    g_server->send(false, NET_MESSAGE_GAME_PACKET, (uint8_t*)&packet, sizeof(gameupdatepacket_t));
-
-                    std::this_thread::sleep_for(std::chrono::milliseconds(2));
-                }
+            std::vector<std::pair<int, int>> hops;
+            for (std::size_t i = 0; i < path.size(); i += stride) {
+                hops.push_back(path[i]);
             }
-            std::this_thread::sleep_for(std::chrono::milliseconds(2));
+            if (hops.empty() || hops.back() != path.back()) {
+                hops.push_back(path.back());
+            }
 
+            for (const auto& p : hops) {
+                gameupdatepacket_t packet{ 0 };
+                packet.m_type = PACKET_STATE;
+                packet.m_int_data = 6326;
+                packet.m_vec_x = p.first * 32;
+                packet.m_vec_y = p.second * 32;
+                packet.m_state1 = p.first;
+                packet.m_state2 = p.second;
+                packet.m_packet_flags = UPDATE_PACKET_PLAYER_MOVING_RIGHT;
+                g_server->send(false, NET_MESSAGE_GAME_PACKET, (uint8_t*)&packet, sizeof(gameupdatepacket_t));
 
+                if (pathfinder_effect_enabled) {
+                    variantlist_t fx{ "OnParticleEffect" };
+                    fx[1] = 90;
+                    fx[2] = vector2_t{ static_cast<float>(packet.m_vec_x) + 10, static_cast<float>(packet.m_vec_y) + 15 };
+                    fx[3] = 0;
+                    fx[4] = 0;
+                    g_server->send(true, fx);
+                }
+
+                std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
+            }
 
             variantlist_t lost{ "OnSetPos" };
             vector2_t pos;
@@ -986,7 +993,7 @@ void server::pathFindTo(int x, int y) {
             g_server->send(true, notif, -1, -1);
         }
     }
-    catch (exception ex)
+    catch (const std::exception&)
     {
         variantlist_t notif{ "OnAddNotification" };
         notif[2] = "`8Something Goes Wrong";
