@@ -5,7 +5,8 @@
 #include "proton/rtparam.hpp"
 #include "proton/variant.hpp"
 #include "server.h"
-#include <vector> 
+#include <vector>
+#include <algorithm>
 #include "utils.h"
 #include <thread>
 #include <limits.h>
@@ -17,9 +18,66 @@
 #include "world.h"
 #include "Discord.h"
 #include "discord_webhook.h"
+#include <chrono>
+#include <cmath>
+#include <iomanip>
+#include <sstream>
 
 
 
+
+namespace {
+int GetWorldGemCount() {
+    int total_gems = 0;
+    for (auto& obj : g_server->m_world.objects) {
+        if (obj.second.itemID == 112)
+            total_gems += obj.second.count;
+    }
+    return total_gems;
+}
+
+int last_world_gem_total = 0;
+
+std::string GetDialogField(const std::string& packet, const std::string& key) {
+    const std::string token = "\n" + key + "|";
+    auto pos = packet.find(token);
+    if (pos == std::string::npos) {
+        return "";
+    }
+    pos += token.size();
+    const auto end_pos = packet.find('\n', pos);
+    return packet.substr(pos, end_pos == std::string::npos ? std::string::npos : end_pos - pos);
+}
+
+std::string BuildPathfinderDialog() {
+    const int stride = std::max(1, pathfinder_blocks_per_teleport);
+    const int delay_ms = std::max(0, pathfinder_delay_ms);
+    constexpr int kExampleDistance = 200;
+    const auto hops_needed = static_cast<int>(std::ceil(static_cast<double>(kExampleDistance) / stride));
+    const double seconds_needed = (delay_ms * hops_needed) / 1000.0;
+
+    std::ostringstream travel_time;
+    travel_time << std::fixed << std::setprecision(6) << seconds_needed;
+
+    std::string dialog =
+        "\nset_default_color|`o"
+        "\nadd_label_with_icon|big|`9Pathfinder Options|left|1434|"
+        "\nadd_spacer|small"
+        "\nadd_textbox|To Enable Pathfind, Type /options and Select `w\"Enable Pathfinder\"``|left|"
+        "\nadd_spacer|small"
+        "\nadd_textbox|`oBlocks per teleport|left|"
+        "\nadd_text_input|p_blocks||" + std::to_string(stride) + "|3|"
+        "\nadd_textbox|`oTeleport Delay ms (1000ms = 1 second)|left|"
+        "\nadd_text_input|p_delay||" + std::to_string(delay_ms) + "|4|"
+        "\nadd_checkbox|p_effect|`oEnable Teleport Effect When Pathfinding|" + std::string(pathfinder_effect_enabled ? "1" : "0") + "|"
+        "\nadd_spacer|small"
+        "\nadd_textbox|In Theory, Traveling " + std::to_string(stride) + " Blocks per " + std::to_string(delay_ms) +
+        "ms Should Travel 200 Blocks In " + travel_time.str() + "sec.|left|"
+        "\nend_dialog|pathfinder|Cancel|Okey|";
+
+    return dialog;
+}
+}
 
 std::vector<std::string> split_string(const std::string& str, char delimiter) {
     std::vector<std::string> tokens;
@@ -69,26 +127,27 @@ void do_door_pass() {
     }
 }
 
-std::chrono::steady_clock::time_point gems_last_collected_time;
-void CheckAndSendGemsMessage() {
-    if (gems_accumulating) {
-        auto current_time = std::chrono::steady_clock::now();
-        auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(current_time - gems_last_collected_time).count();
+std::chrono::steady_clock::time_point gems_last_collected_time = std::chrono::steady_clock::now();
+void CheckAndSendGemsMessage(int previous_total, int current_total) {
+    if (!gems_accumulating) {
+        gems_accumulated_count = 0;
+        last_world_gem_total = current_total;
+        return;
+    }
 
-        if (elapsed_time >= 1) { // Change the duration as needed
-            gt::send_log("`9Collected `2+" + to_string(gems_accumulated_count) + " `9Gems");
-            gems_accumulated_count = 0;
-            gems_accumulating = false;
-        }
-        else {
-            for (auto& obj : g_server->m_world.objects) {
-                if (obj.second.itemID == 112) {
-                    gems_accumulated_count += obj.second.count;
-                    gems_last_collected_time = std::chrono::steady_clock::now();
-                    gems_accumulating = true;
-                }
-            }
-        }
+    const auto now = std::chrono::steady_clock::now();
+
+    if (previous_total > current_total) {
+        gems_accumulated_count += previous_total - current_total;
+        gems_last_collected_time = now;
+    }
+
+    last_world_gem_total = current_total;
+
+    const auto idle_seconds = std::chrono::duration_cast<std::chrono::seconds>(now - gems_last_collected_time).count();
+    if (gems_accumulated_count > 0 && idle_seconds >= 2) {
+        gt::send_log("`9Collected `2+" + std::to_string(gems_accumulated_count) + " `9Gems");
+        gems_accumulated_count = 0;
     }
 }
 
@@ -955,6 +1014,23 @@ bool events::out::generictext(std::string packet) {
     rtvar var = rtvar::parse(packet);
     if (!var.valid())
         return false;
+    if (packet.find("dialog_name|pathfinder") != std::string::npos) {
+        const auto blocks_raw = GetDialogField(packet, "p_blocks");
+        const auto delay_raw = GetDialogField(packet, "p_delay");
+
+        if (!blocks_raw.empty() && utils::is_number(blocks_raw)) {
+            pathfinder_blocks_per_teleport = std::max(1, std::stoi(blocks_raw));
+        }
+
+        if (!delay_raw.empty() && utils::is_number(delay_raw)) {
+            pathfinder_delay_ms = std::max(0, std::stoi(delay_raw));
+        }
+
+        pathfinder_effect_enabled = packet.find("p_effect|1") != std::string::npos;
+
+        gt::send_log("`9Pathfinder set to `3" + std::to_string(pathfinder_blocks_per_teleport) + " `9blocks with `3" + std::to_string(pathfinder_delay_ms) + "ms `9delay.");
+        return true;
+    }
     if (packet.find("buttonClicked|spare_btn_") != -1) {
         std::string iID = packet.substr(packet.find("buttonClicked|spare_btn_") + 24, packet.length() - packet.find("buttonClicked|spare_btn_") - 1);
         int itemID = atoi(iID.c_str());
@@ -1414,12 +1490,23 @@ bool events::out::generictext(std::string packet) {
             g_server->send(true, text);
             return true;
         }
+        else if (find_command(chat, "pathfinder")) {
+            variantlist_t dialog{ "OnDialogRequest" };
+            dialog[1] = BuildPathfinderDialog();
+            g_server->send(true, dialog);
+            return true;
+        }
         else if (find_command(chat, "bj")) {
             gems_accumulating = !gems_accumulating;
-            if (gems_accumulating)
+            if (gems_accumulating) {
+                gems_accumulated_count = 0;
+                gems_last_collected_time = std::chrono::steady_clock::now();
+                last_world_gem_total = GetWorldGemCount();
                 gt::send_log("Gems Checker `2Enabled.");
-            else
+            }
+            else {
                 gt::send_log("Gems Checker `4Disabled.");
+            }
             return true;
         }
         else if (find_command(chat, "wrench")) {
@@ -2556,23 +2643,8 @@ bool events::in::tracking(std::string packet) {
 
 
 bool events::in::OnChangeObject(gameupdatepacket_t* packet) {
-    if (gems_accumulating) {
-        auto current_time = std::chrono::steady_clock::now();
-        auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(current_time - gems_last_collected_time).count();
-        for (auto& obj : g_server->m_world.objects) {
+    const int gem_total_before_change = GetWorldGemCount();
 
-            if (elapsed_time >= 2) { // Change the duration as needed
-                gt::send_log("`9Collected `2+" + to_string(gems_accumulated_count) + " `9Gems");
-                gems_accumulated_count = 0;
-                gems_accumulating = false;
-            }
-            else {
-                gems_accumulated_count += obj.second.count;
-                gems_last_collected_time = std::chrono::steady_clock::now();
-                gems_accumulating = true;
-            }
-        }
-    }
     if (packet->m_player_flags == -1) {
         DroppedItem obj;
         obj.itemID = packet->m_int_data;
@@ -2581,8 +2653,9 @@ bool events::in::OnChangeObject(gameupdatepacket_t* packet) {
         obj.count = static_cast<uint8_t>(packet->m_struct_flags);
         obj.flags = packet->m_packet_flags;
         obj.uid = ++g_server->m_world.lastDroppedUid;
-        g_server->m_world.objects[obj.uid] = obj;
 
+        const auto key = HashCoord(obj.pos.m_x, obj.pos.m_y);
+        g_server->m_world.objects[key] = obj;
     }
     else if (packet->m_player_flags == -3) {
         for (auto& obj : g_server->m_world.objects) {
@@ -2593,14 +2666,12 @@ bool events::in::OnChangeObject(gameupdatepacket_t* packet) {
         }
     }
     else if (packet->m_player_flags > 0) {
-        for (int i = 0; i < g_server->m_world.objects.size(); i++) {
-            if (g_server->m_world.objects[i].uid == packet->m_int_data) {
-                if (packet->m_player_flags == g_server->Local_Player.netid) {
-                    if (g_server->m_world.objects[i].itemID == 112) {
-                        gems += g_server->m_world.objects[i].count;
-                    }
+        for (auto it = g_server->m_world.objects.begin(); it != g_server->m_world.objects.end(); ++it) {
+            if (it->second.uid == packet->m_int_data || (it->second.itemID == packet->m_int_data && it->second.pos.m_x == packet->m_vec_x && it->second.pos.m_y == packet->m_vec_y)) {
+                if (packet->m_player_flags == g_server->Local_Player.netid && it->second.itemID == 112) {
+                    gems += it->second.count;
                 }
-                g_server->m_world.objects.erase(i);
+                g_server->m_world.objects.erase(it);
                 break;
             }
         }
@@ -2610,6 +2681,7 @@ bool events::in::OnChangeObject(gameupdatepacket_t* packet) {
         std::cout << "object update unhandled netid: " << packet->m_int_data << std::endl;
 #endif
     }
+    CheckAndSendGemsMessage(gem_total_before_change, GetWorldGemCount());
     return false;
 }
 
