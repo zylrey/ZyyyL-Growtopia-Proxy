@@ -52,10 +52,10 @@ namespace utils {
     uint64_t GetTime();
     std::string trim(const std::string& str);
 
-    inline bool runAtInterval(TimePoint& timer, double interval_seconds) {
-        const auto now = Clock::now();
+    bool runAtInterval(time_point<system_clock>& timer, double interval) {
+        const auto now = system_clock::now();
         const auto elapsed = now - timer;
-        const auto interval_duration = std::chrono::duration<double>(interval_seconds);
+        const auto interval_duration = duration<double>(interval);
 
         if (elapsed >= interval_duration) {
             timer = now;
