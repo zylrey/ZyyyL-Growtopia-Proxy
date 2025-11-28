@@ -12,32 +12,36 @@ class world {
 };*/
 
 #pragma once
+#include <algorithm>
+#include <cstdint>
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <unordered_map>
-#include <iostream>
 #include <vector>
-#include "utils.h"
+
 #include "player.h"
 #include "struct.h"
-#include <algorithm>
-
-using namespace std;
+#include "utils.h"
 
 
 class ItemDataContainer {
 public:
 
-	ItemDataContainer() = default;
-	std::unordered_map<uint32_t, ItemData> item_map;
+        ItemDataContainer() = default;
+        std::unordered_map<uint32_t, ItemData> item_map;
 
-	bool RequiresTileExtra(int id)
-	{
-		auto it = item_map.find(id);
-		int actionType = it->second.actionType;
-		//std::cout << "Tile Extra ID: " << actionType << endl;
-		return
-			actionType == 2 || // Door
+        bool RequiresTileExtra(int id)
+        {
+                auto it = item_map.find(id);
+                if (it == item_map.end()) {
+                        return false;
+                }
+
+                const int actionType = it->second.actionType;
+                //std::cout << "Tile Extra ID: " << actionType << endl;
+                return
+                        actionType == 2 || // Door
 			actionType == 3 || // Lock
 			actionType == 10 || // Sign
 			actionType == 13 || // Main Door
@@ -99,28 +103,31 @@ public:
 			false;
 	}
 
-	void LoadItemData(string filePath) {
-		string secret = "PBG892FXX982ABC*";
-		string bruh = filePath;
+        void LoadItemData(const std::string& filePath) {
+                const std::string secret = "PBG892FXX982ABC*";
 
-		std::ifstream file(bruh, std::ios::binary | std::ios::ate);
-		int size = file.tellg();
-		if (size == -1) {
-			return;
-		}
-		char* data = new char[size];
-		file.seekg(0, std::ios::beg);
+                std::ifstream file(filePath, std::ios::binary | std::ios::ate);
+                if (!file) {
+                        return;
+                }
 
-		if (file.read((char*)(data), size))
-		{
-		}
-		else {
-			printf("Error occourred from decoding items.dat\n");
-			return;
-		}
-		int memPos = 0;
-		int16_t itemsdatVersion = 0;
-		memcpy(&itemsdatVersion, data + memPos, 2);
+                const std::streamsize size = file.tellg();
+                if (size <= 0) {
+                        return;
+                }
+
+                std::vector<char> buffer(static_cast<size_t>(size));
+                file.seekg(0, std::ios::beg);
+
+                if (!file.read(buffer.data(), size)) {
+                        std::cout << "Error occurred while decoding items.dat" << std::endl;
+                        return;
+                }
+
+                const char* data = buffer.data();
+                int memPos = 0;
+                int16_t itemsdatVersion = 0;
+                memcpy(&itemsdatVersion, data + memPos, 2);
 		memPos += 2;
 		int intemcount;
 		memcpy(&intemcount, data + memPos, 4);
@@ -166,8 +173,8 @@ public:
 			}
 			memcpy(&item.textureHash, data + memPos, 4);
 			memPos += 4;
-			item.itemKind = memPos[data];
-			memPos += 1;
+                        item.itemKind = static_cast<uint8_t>(data[memPos]);
+                        memPos += 1;
 			memcpy(&item.val1, data + memPos, 4);
 			memPos += 4;
 			item.textureX = data[memPos];
@@ -792,8 +799,18 @@ public:
 	{
 	}
 
-	bool operator==(const world& other) const
-	{
-		return false;
-	}
+        bool operator==(const world& other) const
+        {
+                return connected == other.connected &&
+                        name == other.name &&
+                        width == other.width &&
+                        height == other.height &&
+                        tileCount == other.tileCount &&
+                        lastDroppedUid == other.lastDroppedUid &&
+                        nameAccess == other.nameAccess &&
+                        main_door_loc == other.main_door_loc &&
+                        tiles.size() == other.tiles.size() &&
+                        objects.size() == other.objects.size() &&
+                        players.size() == other.players.size();
+        }
 };
