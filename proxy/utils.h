@@ -6,7 +6,7 @@
 #include "packet.h"
 #include "proton/variant.hpp"
 #include <mutex>
-#include <__msvc_chrono.hpp>
+#include <chrono>
 #include "skStr.h"
 #include <boost/filesystem.hpp>
 
@@ -53,10 +53,11 @@ namespace utils {
     std::string trim(const std::string& str);
 
     bool runAtInterval(time_point<system_clock>& timer, double interval) {
-        auto now = system_clock::now();
-        auto elapsed = now - timer;
+        const auto now = system_clock::now();
+        const auto elapsed = now - timer;
+        const auto interval_duration = duration<double>(interval);
 
-        if (elapsed >= seconds(static_cast<long long>(interval))) {
+        if (elapsed >= interval_duration) {
             timer = now;
             return true;
         }
