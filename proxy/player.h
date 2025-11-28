@@ -15,7 +15,7 @@ class player {
     player() {
     
     }
-    bool operator==(const player& right) {
+    bool operator==(const player& right) const {
         return netid == right.netid && userid == right.userid;
     }
     player(std::string name, int netid, int uid) {
