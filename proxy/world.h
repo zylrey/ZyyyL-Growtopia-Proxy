@@ -799,8 +799,18 @@ public:
 	{
 	}
 
-	bool operator==(const world& other) const
-	{
-		return false;
-	}
+        bool operator==(const world& other) const
+        {
+                return connected == other.connected &&
+                        name == other.name &&
+                        width == other.width &&
+                        height == other.height &&
+                        tileCount == other.tileCount &&
+                        lastDroppedUid == other.lastDroppedUid &&
+                        nameAccess == other.nameAccess &&
+                        main_door_loc == other.main_door_loc &&
+                        tiles.size() == other.tiles.size() &&
+                        objects.size() == other.objects.size() &&
+                        players.size() == other.players.size();
+        }
 };
