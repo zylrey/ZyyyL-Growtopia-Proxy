@@ -10,9 +10,6 @@
 #include "skStr.h"
 #include <boost/filesystem.hpp>
 
-using namespace std::chrono;
-
-
 #define PRINTS(msg, ...) printf("[SERVER]: " msg, ##__VA_ARGS__);
 #define PRINTC(msg, ...) printf("[CLIENT]: " msg, ##__VA_ARGS__);
 #define MALLOC(type, ...) (type*)(malloc(sizeof(type) __VA_ARGS__))
@@ -29,6 +26,9 @@ using namespace std::chrono;
 #endif
 
 namespace utils {
+    using Clock = std::chrono::system_clock;
+    using TimePoint = std::chrono::time_point<Clock>;
+
     char* get_text(ENetPacket* packet);
     gameupdatepacket_t* get_struct(ENetPacket* packet);
     int random(int min, int max);
