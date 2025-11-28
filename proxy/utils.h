@@ -6,12 +6,9 @@
 #include "packet.h"
 #include "proton/variant.hpp"
 #include <mutex>
-#include <__msvc_chrono.hpp>
+#include <chrono>
 #include "skStr.h"
 #include <boost/filesystem.hpp>
-
-using namespace std::chrono;
-
 
 #define PRINTS(msg, ...) printf("[SERVER]: " msg, ##__VA_ARGS__);
 #define PRINTC(msg, ...) printf("[CLIENT]: " msg, ##__VA_ARGS__);
@@ -29,6 +26,9 @@ using namespace std::chrono;
 #endif
 
 namespace utils {
+    using Clock = std::chrono::system_clock;
+    using TimePoint = std::chrono::time_point<Clock>;
+
     char* get_text(ENetPacket* packet);
     gameupdatepacket_t* get_struct(ENetPacket* packet);
     int random(int min, int max);
@@ -52,11 +52,12 @@ namespace utils {
     uint64_t GetTime();
     std::string trim(const std::string& str);
 
-    bool runAtInterval(time_point<system_clock>& timer, double interval) {
-        auto now = system_clock::now();
-        auto elapsed = now - timer;
+    inline bool runAtInterval(TimePoint& timer, double interval_seconds) {
+        const auto now = Clock::now();
+        const auto elapsed = now - timer;
+        const auto interval_duration = std::chrono::duration<double>(interval_seconds);
 
-        if (elapsed >= seconds(static_cast<long long>(interval))) {
+        if (elapsed >= interval_duration) {
             timer = now;
             return true;
         }

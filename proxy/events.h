@@ -100,6 +100,10 @@ bool pathmarkerexploit = false;
 bool pathmarkerexploitlocalworld;
 std::string pathmarkertxt = "hiLol";
 
+int pathfinder_blocks_per_teleport = 8;
+int pathfinder_delay_ms = 2;
+bool pathfinder_effect_enabled = false;
+
 bool anticollect = false;
 std::string country_v;
 bool show_ping = true;
