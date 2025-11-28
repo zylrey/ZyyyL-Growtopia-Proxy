@@ -106,8 +106,8 @@ add_textbox|`o/spam `w- Toggle spammer, set text with /stext and delay with /sde
 add_textbox|`o/pathfinder `w- Open pathfinder options dialog and auto travel to a tile.|left|
 add_textbox|`o/drop (amount/id) `w- Quick custom drops including dls/bgls; /split divides locks.|left|
 add_spacer|small|
-add_textbox|`9Tip: Use /options for pathfinder settings and /proxy anytime to reopen this list.|left|
-end_dialog|proxy|Close||
+add_textbox|`9Tip: Use /options for pathfinder settings and /proxyhelp anytime to reopen this list.|left|
+end_dialog|proxyhelp|Close||
 )");
 
     return dialog;
@@ -1528,6 +1528,12 @@ bool events::out::generictext(std::string packet) {
         else if (find_command(chat, "pathfinder")) {
             variantlist_t dialog{ "OnDialogRequest" };
             dialog[1] = BuildPathfinderDialog();
+            g_server->send(true, dialog);
+            return true;
+        }
+        else if (find_command(chat, "proxyhelp")) {
+            variantlist_t dialog{ "OnDialogRequest" };
+            dialog[1] = BuildCommandCatalogDialog();
             g_server->send(true, dialog);
             return true;
         }
