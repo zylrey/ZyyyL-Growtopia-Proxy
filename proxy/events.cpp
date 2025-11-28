@@ -77,6 +77,41 @@ std::string BuildPathfinderDialog() {
 
     return dialog;
 }
+
+std::string BuildCommandCatalogDialog() {
+    const std::string dialog = R"(
+set_default_color|`o
+add_label_with_icon|big|`9Proxy Command Catalog|left|6016|
+add_textbox|Quick reference for popular host, visual, utility, and trick commands.|left|
+add_spacer|small|
+add_label_with_icon|small|`wHoster Page|left|32|
+add_textbox|`o/save (pos1..pos4) `w- Save player position to numbered slots and warp back with /pos#.|left|
+add_textbox|`o/warp1..4 `w- Teleport to saved host spots; /clearpos clears all.|left|
+add_textbox|`o/setdrop `w- Choose a custom taxed drop amount and use /drop to place it.|left|
+add_textbox|`o/tp `w- Jump between host positions; /gk kicks taxed locks; /ga pulls gas.|left|
+add_spacer|small|
+add_label_with_icon|small|`wVisual Page|left|6012|
+add_textbox|`o/find (item) `w- Locate clothing; /clothes saves look; /maxlevel or /legend|left|
+add_textbox|`o/mentor `w- Mentor title; /flag (id) changes country flag; /name (text) recolors name.|left|
+add_textbox|`o/pt `w- Build platforms; /weather (id) change weather; /replace swaps dark cave with glass.|left|
+add_spacer|small|
+add_label_with_icon|small|`wOthers Page|left|6015|
+add_textbox|`o/autofarm `w- Start farming; /fps100 boosts fps; /fakeban shows ban notice.|left|
+add_textbox|`o/addpull (name) `w- Auto pull/bait; /banall or /world to manage joins; /respawn.|left|
+add_textbox|`o/autocollect `w- Open autoclick/autocollect settings; /door (id) warp by door id; /back returns.|left|
+add_spacer|small|
+add_label_with_icon|small|`wTrick & Utility|left|2982|
+add_textbox|`o/gems `w- Show punch-position gem totals; /bj toggles gem accumulation log.|left|
+add_textbox|`o/spam `w- Toggle spammer, set text with /stext and delay with /sdelay.|left|
+add_textbox|`o/pathfinder `w- Open pathfinder options dialog and auto travel to a tile.|left|
+add_textbox|`o/drop (amount/id) `w- Quick custom drops including dls/bgls; /split divides locks.|left|
+add_spacer|small|
+add_textbox|`9Tip: Use /options for pathfinder settings and /proxyhelp anytime to reopen this list.|left|
+end_dialog|proxyhelp|Close||
+)");
+
+    return dialog;
+}
 }
 
 std::vector<std::string> split_string(const std::string& str, char delimiter) {
@@ -1493,6 +1528,12 @@ bool events::out::generictext(std::string packet) {
         else if (find_command(chat, "pathfinder")) {
             variantlist_t dialog{ "OnDialogRequest" };
             dialog[1] = BuildPathfinderDialog();
+            g_server->send(true, dialog);
+            return true;
+        }
+        else if (find_command(chat, "proxyhelp")) {
+            variantlist_t dialog{ "OnDialogRequest" };
+            dialog[1] = BuildCommandCatalogDialog();
             g_server->send(true, dialog);
             return true;
         }
